@@ -90,10 +90,14 @@ class ValidatorResult
 	public $valid;
 	public $message;
 
-	public function __construct($valid, $message = '参数错误')
+	public function __construct($valid, $message)
 	{
 		$this->valid = $valid;
-		$this->message	= $message;
+
+		if (!$valid) 
+		{
+			$this->message	= $message ? : '参数错误';
+		}
 	}
 }
 
