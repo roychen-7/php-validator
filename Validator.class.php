@@ -29,7 +29,7 @@ class Validator
 				// 必须传入，即返回false
 				if ($rule[1])
 				{
-					return new ValidatorResult(false, '必须传入参数' + $index);
+					return new ValidatorResult(false, '必须传入参数' . $index);
 				}
 
 				// 否则继续
@@ -42,7 +42,7 @@ class Validator
 				return new ValidatorResult(false, '尚不支持此类型');
 			}
 
-			$message = (isset($rule[2]) && $rule[2] !== '') ? : $index + '参数类型不正确';
+			$message = (isset($rule[2]) && $rule[2] !== '') ? : $index . '参数类型不正确';
 			if (!$this->$fn_name($values[$index])) 
 			{
 				// 根据message是否传入、为空，决定返回的message
