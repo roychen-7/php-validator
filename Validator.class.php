@@ -83,6 +83,16 @@ class Validator
 	{
 		return is_int($v);
 	}
+	
+	private function _is_number($v) 
+	{
+		return is_numeric($v);
+	}
+
+	private function _is_boolean($v)
+	{
+		return $v === true || $v === false;
+	}
 }
 
 class ValidatorResult
